@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-gray-950 text-gray-100">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>X Post Generator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    /* form design */
+    input:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+  </style>
+</head>
+
+<body class="min-h-screen flex items-center justify-center px-4 py-12 bg-gray-950">
+  <div class="w-full max-w-md space-y-8 container">
+    <!-- title -->
+    <div class="text-center">
+      <h1 class="text-3xl font-semibold tracking-tight">XLog</h1>
+      <p class="text-sm text-gray-400 mt-2">My simple minimalistic template for X.com</p>
+    </div>
+
+    <!-- form -->
+    <form id="tweetForm" class="space-y-4">
+      <div class="flex flex-col gap-3">
+        <input id="leetcode" placeholder="Leetcode"
+          class="p-3 bg-gray-900 border border-gray-800 rounded-lg placeholder-gray-500 text-sm focus:border-gray-600" />
+        <input id="typing" placeholder="Typing"
+          class="p-3 bg-gray-900 border border-gray-800 rounded-lg placeholder-gray-500 text-sm focus:border-gray-600" />
+        <input id="chess" placeholder="Chess"
+          class="p-3 bg-gray-900 border border-gray-800 rounded-lg placeholder-gray-500 text-sm focus:border-gray-600" />
+        <input id="walk" placeholder="Walk"
+          class="p-3 bg-gray-900 border border-gray-800 rounded-lg placeholder-gray-500 text-sm focus:border-gray-600" />
+        <input id="proj" placeholder="Project"
+          class="p-3 bg-gray-900 border border-gray-800 rounded-lg placeholder-gray-500 text-sm focus:border-gray-600" />
+        <input id="extras" placeholder="Extras"
+          class="p-3 bg-gray-900 border border-gray-800 rounded-lg placeholder-gray-500 text-sm focus:border-gray-600" />
+      </div>
+    </form>
+
+    <!-- count of words -->
+    <div id="charCount" style="text-align: center; font-size: 0.9em; color: #666;"></div>
+
+    <!-- preview -->
+    <div class="border border-gray-800 rounded-lg p-4 bg-gray-900/50 backdrop-blur-sm">
+      <p class="text-gray-400 text-xs font-medium uppercase tracking-wide mb-3">Preview</p>
+      <div id="preview" class="whitespace-pre-wrap text-gray-100 text-sm leading-relaxed"></div>
+    </div>
+
+    <!-- submit -->
+    <button id="tweetBtn"
+      class="bg-gray-200 text-gray-900 px-6 py-3 rounded-lg w-full font-medium text-sm tracking-wide hover:bg-gray-300 active:bg-gray-400 transition-colors duration-200">
+      Share on X.com 
+    </button>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
