@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>X Post Generator</title>
+  <title>Xlog</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body {
@@ -24,9 +24,12 @@
   <div class="w-full max-w-md space-y-8 container">
     <!-- title -->
     <div class="text-center">
-      <h1 class="text-3xl font-semibold tracking-tight">XLog</h1>
+      <h1 class="text-3xl font-semibold tracking-tight">Xlog</h1>
       <p class="text-sm text-gray-400 mt-2">My simple minimalistic template for X.com</p>
     </div>
+
+    <!-- count of words -->
+    <div id="charCount" style="text-align: center; font-size: 0.9em; color: #e57373 ;"></div>
 
     <!-- form -->
     <form id="tweetForm" class="space-y-4">
@@ -45,9 +48,6 @@
           class="p-3 bg-gray-900 border border-gray-800 rounded-lg placeholder-gray-500 text-sm focus:border-gray-600" />
       </div>
     </form>
-
-    <!-- count of words -->
-    <div id="charCount" style="text-align: center; font-size: 0.9em; color: #666;"></div>
 
     <!-- preview -->
     <div class="border border-gray-800 rounded-lg p-4 bg-gray-900/50 backdrop-blur-sm">
