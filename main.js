@@ -7,7 +7,7 @@ const today = new Date();
 const diffDays = Math.floor((today - startDate) / (1000 * 60 * 60 * 24));
 const logNumber = String(diffDays + 1).padStart(3, "0");
 
-function generateTweet() {
+function getTweetText() {
   let lines = [];
 
   fields.forEach((id) => {
@@ -36,33 +36,28 @@ function generateTweet() {
     }
   });
 
-  if (lines.length === 0) {
-    preview.textContent = "Fill in something to generate a log...";
-    counter.textContent = "";
-    return;
-  }
-
   let base = `log #${logNumber}\n\n`;
   let footer = `\n\ntemplated from karts13.github.io/Xlog/`;
-  let fullText = `${base}${lines.join("\n")}${footer}`;
+  return `${base}${lines.join("\n")}${footer}`;
+}
 
-  //280 max
-  while (fullText.length > 280 && lines.length > 0) {
-    const lastLine = lines[lines.length - 1];
-    if (lastLine.startsWith("🍿")) {
-      lines[lines.length - 1] = "🍿 ...";
-    } else {
-      lines.pop();
-    }
-    fullText = `${base}${lines.join("\n")}${footer}`;
-  }
-
-  preview.textContent = fullText;
-  counter.textContent = `${280 - fullText.length} chars left`;
+function generateTweet() {
+  const text = getTweetText();
+  preview.textContent = text || "Fill in something to generate a log...";
+  counter.textContent = `${280 - text.length} chars left`;
 }
 
 fields.forEach((id) => {
-  document.getElementById(id).addEventListener("input", generateTweet);
+  const inputEl = document.getElementById(id);
+
+  inputEl.addEventListener("input", (e) => {
+    const currentText = getTweetText();
+    if (currentText.length > 280) {
+      e.target.value = e.target.value.slice(0, -1);
+      alert("You’ve reached the 280 character limit!");
+    }
+    generateTweet();
+  });
 });
 
 document.getElementById("tweetBtn").addEventListener("click", () => {
@@ -71,3 +66,5 @@ document.getElementById("tweetBtn").addEventListener("click", () => {
   const twitterUrl = `https://x.com/intent/tweet?text=${encoded}`;
   window.open(twitterUrl, "_blank");
 });
+
+generateTweet();

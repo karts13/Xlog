@@ -21,45 +21,52 @@
 </head>
 
 <body class="min-h-screen flex items-center justify-center px-4 py-12 bg-gray-950">
-  <div class="w-full max-w-md space-y-8 container">
+  <div class="w-full max-w-5xl container space-y-8">
     <!-- title -->
-    <div class="text-center">
-      <h1 class="text-3xl font-semibold tracking-tight">Xlog</h1>
-      <p class="text-sm text-gray-400 mt-2">My simple minimalistic template for X.com</p>
+    <div class="text-center space-y-3">
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tight">Xlog</h1>
+      <p class="text-base md:text-lg text-gray-400">My simple minimalistic template for X.com</p>
+      <!-- count of words -->
+      <div id="charCount" class="text-center text-sm" style="color: #e57373;"></div>
     </div>
 
-    <!-- count of words -->
-    <div id="charCount" style="text-align: center; font-size: 0.9em; color: #e57373 ;"></div>
+    <div class="grid gap-8 md:grid-cols-2">
+      <div class="space-y-6">
 
-    <!-- form -->
-    <form id="tweetForm" class="space-y-4">
-      <div class="flex flex-col gap-3">
-        <input id="leetcode" placeholder="Leetcode"
-          class="p-3 bg-gray-900 border border-gray-800 rounded-lg placeholder-gray-500 text-sm focus:border-gray-600" />
-        <input id="typing" placeholder="Typing"
-          class="p-3 bg-gray-900 border border-gray-800 rounded-lg placeholder-gray-500 text-sm focus:border-gray-600" />
-        <input id="chess" placeholder="Chess"
-          class="p-3 bg-gray-900 border border-gray-800 rounded-lg placeholder-gray-500 text-sm focus:border-gray-600" />
-        <input id="walk" placeholder="Walk"
-          class="p-3 bg-gray-900 border border-gray-800 rounded-lg placeholder-gray-500 text-sm focus:border-gray-600" />
-        <input id="proj" placeholder="Project"
-          class="p-3 bg-gray-900 border border-gray-800 rounded-lg placeholder-gray-500 text-sm focus:border-gray-600" />
-        <input id="extras" placeholder="Extras"
-          class="p-3 bg-gray-900 border border-gray-800 rounded-lg placeholder-gray-500 text-sm focus:border-gray-600" />
+        <!-- form -->
+        <form id="tweetForm" class="space-y-5">
+          <div class="flex flex-col gap-6">
+            <input id="leetcode" placeholder="Leetcode"
+              class="p-3 bg-gray-900 border border-gray-800 rounded-lg placeholder-gray-500 text-sm focus:border-gray-600" />
+            <input id="typing" placeholder="Typing"
+              class="p-3 bg-gray-900 border border-gray-800 rounded-lg placeholder-gray-500 text-sm focus:border-gray-600" />
+            <input id="chess" placeholder="Chess"
+              class="p-3 bg-gray-900 border border-gray-800 rounded-lg placeholder-gray-500 text-sm focus:border-gray-600" />
+            <input id="walk" placeholder="Walk"
+              class="p-3 bg-gray-900 border border-gray-800 rounded-lg placeholder-gray-500 text-sm focus:border-gray-600" />
+            <input id="proj" placeholder="Project"
+              class="p-3 bg-gray-900 border border-gray-800 rounded-lg placeholder-gray-500 text-sm focus:border-gray-600" />
+            <input id="extras" placeholder="Extras"
+              class="p-3 bg-gray-900 border border-gray-800 rounded-lg placeholder-gray-500 text-sm focus:border-gray-600" />
+          </div>
+        </form>
       </div>
-    </form>
 
-    <!-- preview -->
-    <div class="border border-gray-800 rounded-lg p-4 bg-gray-900/50 backdrop-blur-sm">
-      <p class="text-gray-400 text-xs font-medium uppercase tracking-wide mb-3">Preview</p>
-      <div id="preview" class="whitespace-pre-wrap text-gray-100 text-sm leading-relaxed"></div>
+      <div class="space-y-8 flex flex-col">
+        <!-- preview -->
+        <div
+          class="border border-gray-800 rounded-lg p-5 bg-gray-900/50 backdrop-blur-sm h-80 overflow-y-auto">
+          <p class="text-gray-400 text-xs font-medium uppercase tracking-wide mb-3">Preview</p>
+          <div id="preview" class="whitespace-pre-wrap text-gray-100 text-sm leading-relaxed"></div>
+        </div>
+
+        <!-- submit -->
+        <button id="tweetBtn"
+          class="bg-gray-200 text-gray-900 px-6 py-3 rounded-lg w-full font-medium text-sm tracking-wide hover:bg-gray-300 active:bg-gray-400 transition-colors duration-200">
+          Share on X.com
+        </button>
+      </div>
     </div>
-
-    <!-- submit -->
-    <button id="tweetBtn"
-      class="bg-gray-200 text-gray-900 px-6 py-3 rounded-lg w-full font-medium text-sm tracking-wide hover:bg-gray-300 active:bg-gray-400 transition-colors duration-200">
-      Share on X.com 
-    </button>
   </div>
 
   <script src="main.js"></script>
